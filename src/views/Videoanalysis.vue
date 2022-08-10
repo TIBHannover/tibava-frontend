@@ -54,13 +54,44 @@
 
       <v-row class="ma-2">
         <v-col>
-          <v-card class="d-flex flex-column flex-nowrap" max-width="100%" elevation="2" scrollable="False">
-            <v-card-title> Timelines </v-card-title>
-            <v-flex grow class="mb-2 px-4">
-              <Timeline ref="timeline" width="100%">
-              </Timeline>
-            </v-flex>
-          </v-card>
+          <v-tabs show-arrows center-active>
+            <v-tabs-slider />
+            <v-tab v-for="view in views" :key="view.id">
+              {{ view.name }}
+              <v-spacer></v-spacer>
+              <v-menu bottom right>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn icon small>
+                    <v-icon v-bind="attrs" v-on="on">mdi-dots-vertical</v-icon>
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item>
+                    Duplicate View
+                  </v-list-item>
+                  <v-list-item>
+                    <ModalRenameView :view="view.id" />
+                  </v-list-item>
+                  <v-list-item>
+                    <ModalDeleteView :view="view.id" />
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-tab>
+            <v-btn icon small @click="addView">
+              <v-icon>
+                mdi-plus
+              </v-icon>
+            </v-btn>
+            <v-tab-item :eager="true" v-for="view in views" :key="view.id">
+              <v-card class="d-flex flex-column flex-nowrap py-4" max-width="100%" elevation="2" scrollable="False">
+                <v-flex grow class="mb-2 px-4">
+                  <Timeline :view="view.id" ref="timeline" width="100%">
+                  </Timeline>
+                </v-flex>
+              </v-card>
+            </v-tab-item>
+          </v-tabs>
         </v-col>
       </v-row>
       <ModalTimelineSegmentAnnotate :show.sync="annotationDialog.show" />
@@ -76,6 +107,8 @@ import TimeSelector from "@/components/TimeSelector.vue";
 import EntitiesCard from "@/components/EntitiesCard.vue";
 import CurrentEntitiesOverView from "@/components/CurrentEntitiesOverView.vue";
 import ModalTimelineSegmentAnnotate from "@/components/ModalTimelineSegmentAnnotate.vue";
+import ModalRenameView from "@/components/ModalRenameView.vue";
+import ModalDeleteView from "@/components/ModalDeleteView.vue";
 
 import * as Keyboard from "../plugins/keyboard.js";
 // import store from "../store/index.js";
@@ -84,6 +117,7 @@ import { mapStores } from "pinia";
 import { useVideoStore } from "@/store/video";
 import { usePlayerStore } from "@/store/player";
 import { useShotStore } from "@/store/shot";
+import { useTimelineViewStore } from "@/store/timeline_view";
 import { useTimelineStore } from "@/store/timeline";
 import { useTimelineSegmentStore } from "@/store/timeline_segment";
 import { useTimelineSegmentAnnotationStore } from "@/store/timeline_segment_annotation";
@@ -241,6 +275,9 @@ export default {
         });
       }
     },
+    addView() {
+      this.timelineViewStore.create({})
+    },
 
     async fetchData({ addResults = true }) {
       // Ask backend about all videos
@@ -260,11 +297,14 @@ export default {
     shots() {
       return this.shotStore.shots;
     },
-
+    views() {
+      return this.timelineViewStore.forVideo(this.$route.params.id);
+    },
     ...mapStores(
       useVideoStore,
       usePlayerStore,
       useShotStore,
+      useTimelineViewStore,
       useTimelineStore,
       useTimelineSegmentStore,
       useTimelineSegmentAnnotationStore,
@@ -302,6 +342,8 @@ export default {
     EntitiesCard,
     CurrentEntitiesOverView,
     ModalTimelineSegmentAnnotate,
+    ModalRenameView,
+    ModalDeleteView
   },
 };
 </script>

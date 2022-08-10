@@ -176,6 +176,10 @@ import { usePluginRunResultStore } from "@/store/plugin_run_result";
 export default {
   mixins: [TimeMixin],
   props: {
+    view: {
+      type: String,
+      default: null,
+    },
     headerWidth: {
       type: Number,
       default: 0,
@@ -780,7 +784,8 @@ export default {
       return end;
     },
     timelines() {
-      let timelines = this.timelineStore.all;
+      let timelines = this.timelineStore.forView(this.view);
+      console.log(timelines);
       return timelines;
     },
     timelinesAdded() {
