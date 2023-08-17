@@ -107,12 +107,21 @@
             "title": "Plugins",
             "close": "close",
             "run": "Start Plugin",
+            "choose": "Choose Plugin",
             "timeline_name": "Timeline Name",
             "shot_timeline_name": "Shot Boundaries from Timeline",
             "shot_timeline_hint": "*The annotations are created based on the shot boundaries of the selected timeline",
             "scalar_timeline_name": "Select Timelines",
             "scalar_timeline_hint": "*The scalar values of the selected timelines will be aggregated",
             "fps": "Frames per Second (FPS)",
+            "plugin_groups": {
+                "audio": "Audio",
+                "face": "Face",
+                "color": "Color",
+                "shot": "Shots",
+                "identification": "Identification",
+                "aggregation": "Aggregation"
+            },
             "aggregation": {
                 "plugin_name": "Aggregate Timelines",
                 "timeline_name": "Aggregated Timeline",
