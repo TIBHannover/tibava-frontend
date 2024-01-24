@@ -328,6 +328,9 @@
                 "yes": "Yes",
                 "no": "No"
             }
+        },
+        "persongraph": {
+            "places_toggle": "Show places"
         }
     },
     "user": {

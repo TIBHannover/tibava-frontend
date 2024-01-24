@@ -25,13 +25,17 @@
                             @input="updateText"></v-text-field>
                     </v-col>
                     <v-col cols="1"></v-col>
-                    <v-col cols="5">
+                    <v-col cols="4">
                         <v-label>Connect clusters if elements appeared in the same:</v-label>
                         <v-switch v-model="shotVisualization" label="Shot">
                             <template #prepend>
                                 <v-label>Frame</v-label>
                             </template>
 
+                        </v-switch>
+                    </v-col>
+                    <v-col cols="1">
+                        <v-switch v-model="includePlacesNodes" label="$t('modal.places_toggle')">
                         </v-switch>
                     </v-col>
                     <v-spacer></v-spacer>
@@ -50,6 +54,7 @@ import { Network } from "vis-network";
 import { DataSet } from "vis-data";
 import { mapStores } from "pinia";
 import { useFaceclusterStore } from "@/store/facecluster";
+import { usePlaceclusterStore } from "@/store/placecluster";
 import { useShotStore } from "@/store/shot";
 import { useClusterTimelineItemStore } from "../store/cluster_timeline_item";
 
@@ -69,7 +74,8 @@ export default {
             data: null,
             options: null,
             debounceTimer: null,
-            shotVisualization: true
+            shotVisualization: true,
+            includePlacesNodes: false
         };
     },
     created() {
@@ -146,6 +152,26 @@ export default {
                 })
             });
 
+            // add place clusters nodes
+            let placeclusterList = [];
+            if (this.includePlacesNodes) {
+                placeclusterList = this.placeclusterStore.clusters
+                    .filter((item) => this.clusterTimelineItemStore.getID(item.systemId) !== -1)
+                    .filter((cluster) => cluster.timestamps.length >= this.desired_min_size);
+                placeclusterList.forEach((cluster) => {
+                    dataset.push({
+                        id: 'place' + cluster.id,
+                        label: `Place ${clusterTimelineItemStore.getName(cluster.systemId)} (${cluster.timestamps.length})`,
+                        value: cluster.timestamps.length,
+                        color: {
+                            background: 'white',
+                            border: 'blue',
+                            highlight: 'blue',
+                        },
+                    });
+                });
+            }
+
             this.nodes = new DataSet(dataset);
 
             let connections = [];
@@ -181,6 +207,18 @@ export default {
                     }
                     checked.push(String(cluster.id) + String(conn_cluster.id));
                     checked.push(String(conn_cluster.id) + String(cluster.id));
+                });
+                placeclusterList.forEach((place) => {
+                    let value = 0;
+                    cluster.timestamps.forEach((timestamp) => {
+                        if (place.timestamps.includes(timestamp)) {
+                            value++;
+                        }
+                    });
+                    if (value > 0) {
+                        connections.push({ from: cluster.id, to: 'place' + place.id, value: value, label: String(value), color: 'blue' });
+                    }
+
                 });
             });
             this.edges = new DataSet(connections);
@@ -263,13 +301,16 @@ export default {
             const clusterTimelineItemStore = useClusterTimelineItemStore();
             return clusterTimelineItemStore.all.length;
         },
-        ...mapStores(useFaceclusterStore, useClusterTimelineItemStore, useShotStore)
+        ...mapStores(useFaceclusterStore, usePlaceclusterStore, useClusterTimelineItemStore, useShotStore)
     },
     watch: {
         availableClusters(num) {
             this.fetchClusters();
         },
         shotVisualization(shot) {
+            this.openGraph();
+        },
+        includePlacesNodes() {
             this.openGraph();
         }
     }
