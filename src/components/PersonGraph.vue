@@ -141,7 +141,7 @@ export default {
                 }
                 dataset.push({
                     id: cluster.id,
-                    label: clusterTimelineItemStore.getName(cluster.systemId),
+                    label: `${clusterTimelineItemStore.getName(cluster.systemId)} (${cluster.timestamps.length})`,
                     value: cluster.timestamps.length
                 })
             });
