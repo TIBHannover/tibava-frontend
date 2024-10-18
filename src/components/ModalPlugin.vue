@@ -178,6 +178,15 @@ export default {
               parameters: [],
               optional_parameters: [],
             },
+            {
+              name: this.$t("modal.plugin.whisper_x.plugin_name"),
+              description: this.$t("modal.plugin.whisper_x.plugin_description"),
+              icon: "mdi-waveform",
+              plugin: "whisper_x",
+              id: 105,
+              parameters: [],
+              optional_parameters: [],
+            },
           ],
         },
         {
