@@ -151,6 +151,9 @@ export default {
       if (type === "whisper") {
         return this.$t("modal.plugin.whisper.plugin_name");
       }
+      if (type === "whisper_x") {
+        return this.$t("modal.plugin.whisper_x.plugin_name");
+      }
       if (type === "shotdetection") {
         return this.$t("modal.plugin.shot_detection.plugin_name");
       }

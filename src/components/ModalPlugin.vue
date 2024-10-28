@@ -185,7 +185,14 @@ export default {
               plugin: "whisper_x",
               id: 105,
               parameters: [],
-              optional_parameters: [],
+              optional_parameters: [
+                {
+                  field: "text_field",
+                  name: "language_code",
+                  value: "none", // TODO should be no value (currently then no task is started)
+                  text: this.$t("modal.plugin.whisper_x.language_code_name") + ` (${this.$t("modal.plugin.whisper_x.language_code_hint")})`,
+                },
+              ],
             },
           ],
         },
