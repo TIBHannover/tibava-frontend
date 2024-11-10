@@ -194,6 +194,15 @@ export default {
                 },
               ],
             },
+            {
+              name: this.$t("modal.plugin.audio_speaker_analysis.plugin_name"),
+              description: this.$t("modal.plugin.audio_speaker_analysis.plugin_description"),
+              icon: "mdi-waveform",
+              plugin: "audio_speaker_analysis",
+              id: 106,
+              parameters: [],
+              optional_parameters: [],
+            },
           ],
         },
         {
