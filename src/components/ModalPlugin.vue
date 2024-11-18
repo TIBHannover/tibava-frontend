@@ -203,6 +203,23 @@ export default {
               parameters: [],
               optional_parameters: [],
             },
+            {
+              name: this.$t("modal.plugin.audio_classification.plugin_name"),
+              description: this.$t("modal.plugin.audio_classification.plugin_description"),
+              icon: "mdi-waveform",
+              plugin: "audio_classification",
+              id: 107,
+              parameters: [
+                {
+                  field: "select_options",
+                  text: this.$t("modal.plugin.audio_classification.segmentation_selector_description"),
+                  items: ["Shot", "Speaker"],
+                  value: "Shot",
+                  name: "segment_type",
+                },
+              ],
+              optional_parameters: [],
+            },
           ],
         },
         {

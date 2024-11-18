@@ -107,7 +107,10 @@ export default {
         return this.$t("modal.plugin.audio_rms.plugin_name");
       }
       if (type === "audio_speaker_analysis") {
-        return this.$t("modal.plugin.audio_speaker_analysis.plugin_name)
+        return this.$t("modal.plugin.audio_speaker_analysis.plugin_name")
+      }
+      if (type === "audio_classification") {
+        return this.$t("modal.plugin.audio_classification.plugin_name")
       }
       if (type === "clip") {
         return this.$t("modal.plugin.clip.plugin_name");

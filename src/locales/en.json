@@ -177,6 +177,11 @@
         "plugin_name": "Audio Speaker Analysis",
         "plugin_description": "This plugin detects emotions and gender from audio segments (retrieved with WisperX)."
       },
+      "audio_classification": {
+        "plugin_name": "Audio Classification",
+        "plugin_description": "This plugin classifies sounds from video segments.",
+        "segmentation_selector_description": "Select the type of segments you want to use to classify the audio fragments:"
+      },
       "audio_frequency": {
         "plugin_name": "Audio Spectrogram",
         "plugin_description": "This plugin computes the spectrogram of the audio signal that could reveal rhytmic patterns (e.g., music), voices, or other sound patterns.",
