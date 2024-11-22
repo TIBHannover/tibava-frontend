@@ -945,6 +945,21 @@ export default {
             },
           ],
         },
+        {
+          id: 7,
+          name: this.$t("modal.plugin.groups.text"),
+          children: [
+            {
+              name: this.$t("modal.plugin.text_ner.plugin_name"),
+              description: this.$t("modal.plugin.text_ner.plugin_description"),
+              icon: "mdi-translate",
+              plugin: "text_ner",
+              id: 701,
+              parameters: [],
+              optional_parameters: []
+            }
+          ]
+        }
       ],
     };
   },
