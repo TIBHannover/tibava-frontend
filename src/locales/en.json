@@ -195,6 +195,11 @@
         "plugin_name": "Named Entity Recognition and Disambiguation (NERD)",
         "plugin_description": "This plugin performs Named Entity Recognition (NER) and subsequently Entity Linking / Disambiguation based on the speaker segments of WhisperX."
       },
+      "text_pos": {
+        "plugin_name": "PoS Tagging",
+        "plugin_description": "This plugin performs PoS Tagging based on the speaker segments of WhisperX. For each speaker segment the count of each PoS-Tag is shown.",
+        "language_code_name": "Language Code"
+      },
 
       "blip": {
         "plugin_name": "Visual Question Answering (InstructBLIP)",

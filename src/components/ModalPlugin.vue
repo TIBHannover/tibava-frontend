@@ -957,6 +957,22 @@ export default {
               id: 701,
               parameters: [],
               optional_parameters: []
+            },
+            {
+              name: this.$t("modal.plugin.text_pos.plugin_name"),
+              description: this.$t("modal.plugin.text_pos.plugin_description"),
+              icon: "mdi-translate",
+              plugin: "text_pos",
+              id: 702,
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "language_code",
+                  value: "de",
+                  text: this.$t("modal.plugin.text_pos.language_code_name")
+                },
+              ],
+              optional_parameters: []
             }
           ]
         }

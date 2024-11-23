@@ -115,6 +115,9 @@ export default {
       if (type === "text_ner") {
         return this.$t("modal.plugin.text_ner.plugin_name")
       }
+      if (type === "text_pos") {
+        return this.$t("modal.plugin.text_pos.plugin_name")
+      }
       if (type === "clip") {
         return this.$t("modal.plugin.clip.plugin_name");
       }
