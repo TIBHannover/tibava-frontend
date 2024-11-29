@@ -973,6 +973,23 @@ export default {
                 },
               ],
               optional_parameters: []
+            },
+            {
+              name: this.$t("modal.plugin.text_sentiment.plugin_name"),
+              description: this.$t("modal.plugin.text_sentiment.plugin_description"),
+              icon: "mdi-translate",
+              plugin: "text_sentiment",
+              id: 703,
+              parameters: [
+                {
+                  field: "select_options",
+                  text: this.$t("modal.plugin.text_sentiment.model_selector_description"),
+                  items: ["German-News", "German-General", "Multilingual"],
+                  value: "Multilingual",
+                  name: "model_type",
+                },
+              ],
+              optional_parameters: []
             }
           ]
         }

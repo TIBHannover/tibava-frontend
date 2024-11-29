@@ -118,6 +118,9 @@ export default {
       if (type === "text_pos") {
         return this.$t("modal.plugin.text_pos.plugin_name")
       }
+      if (type === "text_sentiment") {
+        return this.$t("modal.plugin.text_sentiment.plugin_name")
+      }
       if (type === "clip") {
         return this.$t("modal.plugin.clip.plugin_name");
       }

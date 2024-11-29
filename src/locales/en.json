@@ -200,6 +200,11 @@
         "plugin_description": "This plugin performs PoS Tagging based on the speaker segments of WhisperX. For each speaker segment the count of each PoS-Tag is shown.",
         "language_code_name": "Language Code"
       },
+      "text_sentiment": {
+        "plugin_name": "Sentiment Analysis",
+        "plugin_description": "This plugin performs sentiment analysis based on the speaker segments of WhisperX. The predicted label is shown as well as the predicted probabilities for each sentiment.",
+        "model_selector_description": "Model Type"
+      },
 
       "blip": {
         "plugin_name": "Visual Question Answering (InstructBLIP)",
