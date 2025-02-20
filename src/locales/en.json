@@ -339,6 +339,11 @@
         "plugin_name": "Thumbnail Generation",
         "plugin_description": "This plugin creates thumbnails for the video that are used in the tab \"Shots\". The plugin is automatically performed once a video is uploaded. Please only perform it again if the thumbnails appear to be missing."
       },
+      "shot_angle": {
+        "plugin_name": "Shot Angle Classification",
+        "plugin_description": "Classifies the angle of each shot. Possible labels: overhead, high, neutral, low, dutch",
+        "timeline_name": "Shot Angle"
+      },
       "invert": {
         "plugin_name": "Invert Timeline",
         "plugin_description": "Inverts a timeline by calculating 1-y. If the original timeline was greater than 1 or less than 0, the values are normalized to [0,1] beforehand.",

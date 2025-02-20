@@ -184,6 +184,9 @@ export default {
       if (type === "thumbnail") {
         return this.$t("modal.plugin.thumbnail.plugin_name");
       }
+      if (type === "shot_angle") {
+        return this.$t("modal.plugin.shot_angle.plugin_name");
+      }
       return type;
     },
   },

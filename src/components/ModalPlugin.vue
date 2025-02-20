@@ -874,6 +874,24 @@ export default {
               optional_parameters: [],
             },
             {
+              name: this.$t("modal.plugin.shot_angle.plugin_name"),
+              description: this.$t("modal.plugin.shot_angle.plugin_description"),
+              icon: "mdi-image-multiple",
+              plugin: "shot_angle",
+              id: 506,
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t(
+                    "modal.plugin.shot_angle.timeline_name"
+                  ),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
+              optional_parameters: [],
+            },
+            {
               name: this.$t("modal.plugin.thumbnail.plugin_name"),
               description: this.$t("modal.plugin.thumbnail.plugin_description"),
               icon: "mdi-image-multiple",
