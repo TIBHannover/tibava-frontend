@@ -888,8 +888,24 @@ export default {
                   ),
                   text: this.$t("modal.plugin.timeline_name"),
                 },
+                {
+                  field: "select_timeline",
+                  name: "shot_timeline_id",
+                  text: this.$t("modal.plugin.shot_timeline_name"),
+                  hint: this.$t("modal.plugin.shot_timeline_hint"),
+                },
               ],
-              optional_parameters: [],
+              optional_parameters: [
+                {
+                  field: "slider",
+                  min: 1,
+                  max: 10,
+                  value: 2,
+                  step: 1,
+                  name: "fps",
+                  text: this.$t("modal.plugin.fps"),
+                },
+              ],
             },
             {
               name: this.$t("modal.plugin.thumbnail.plugin_name"),

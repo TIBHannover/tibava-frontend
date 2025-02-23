@@ -341,8 +341,8 @@
       },
       "shot_angle": {
         "plugin_name": "Shot Angle Classification",
-        "plugin_description": "Classifies the angle of each shot. Possible labels: overhead, high, neutral, low, dutch",
-        "timeline_name": "Shot Angle"
+        "plugin_description": "This plugin classifies the angle of each shot within the video based on a deep learning model. All shots will be automatically labeled by its dominant shot angle. Possible labels: Overhead, High, Neutral, Low, Dutch",
+        "timeline_name": "Shot Angles"
       },
       "invert": {
         "plugin_name": "Invert Timeline",
