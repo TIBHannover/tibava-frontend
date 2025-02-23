@@ -187,6 +187,9 @@ export default {
       if (type === "shot_angle") {
         return this.$t("modal.plugin.shot_angle.plugin_name");
       }
+      if (type === "shot_level") {
+        return this.$t("modal.plugin.shot_level.plugin_name");
+      }
       return type;
     },
   },

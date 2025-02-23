@@ -344,6 +344,11 @@
         "plugin_description": "This plugin classifies the angle of each shot within the video based on a deep learning model. All shots will be automatically labeled by its dominant shot angle. Possible labels: Overhead, High, Neutral, Low, Dutch",
         "timeline_name": "Shot Angles"
       },
+      "shot_level": {
+        "plugin_name": "Shot Level Classification",
+        "plugin_description": "This plugin classifies the level of each shot within the video based on a deep learning model. All shots will be automatically labeled by its dominant shot level. Possible labels: Aerial, Eye, Shoulder, Hip, Knee, Ground",
+        "timeline_name": "Shot Levels"
+      },
       "invert": {
         "plugin_name": "Invert Timeline",
         "plugin_description": "Inverts a timeline by calculating 1-y. If the original timeline was greater than 1 or less than 0, the values are normalized to [0,1] beforehand.",
