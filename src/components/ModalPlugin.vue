@@ -942,6 +942,48 @@ export default {
               ],
             },
             {
+              name: this.$t("modal.plugin.shot_scale_and_movement.plugin_name"),
+              description: this.$t("modal.plugin.shot_scale_and_movement.plugin_description"),
+              icon: "mdi-image-multiple",
+              plugin: "shot_scale_and_movement",
+              id: 508,
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline_scale",
+                  value: this.$t(
+                    "modal.plugin.shot_scale_and_movement.timeline_name_scale"
+                  ),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+                {
+                  field: "text_field",
+                  name: "timeline_movement",
+                  value: this.$t(
+                    "modal.plugin.shot_scale_and_movement.timeline_name_movement"
+                  ),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+                {
+                  field: "select_timeline",
+                  name: "shot_timeline_id",
+                  text: this.$t("modal.plugin.shot_timeline_name"),
+                  hint: this.$t("modal.plugin.shot_timeline_hint"),
+                },
+              ],
+              optional_parameters: [
+                {
+                  field: "slider",
+                  min: 5,
+                  max: 60,
+                  value: 25,
+                  step: 5,
+                  name: "fps",
+                  text: this.$t("modal.plugin.fps"),
+                },
+              ],
+            },
+            {
               name: this.$t("modal.plugin.thumbnail.plugin_name"),
               description: this.$t("modal.plugin.thumbnail.plugin_description"),
               icon: "mdi-image-multiple",

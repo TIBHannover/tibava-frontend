@@ -190,6 +190,9 @@ export default {
       if (type === "shot_level") {
         return this.$t("modal.plugin.shot_level.plugin_name");
       }
+      if (type === "shot_scale_and_movement") {
+        return this.$t("modal.plugin.shot_scale_and_movement.plugin_name");
+      }
       return type;
     },
   },

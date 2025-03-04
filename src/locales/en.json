@@ -349,6 +349,12 @@
         "plugin_description": "This plugin classifies the level of each shot within the video based on a deep learning model. All shots will be automatically labeled by its dominant shot level. Possible labels: Aerial, Eye, Shoulder, Hip, Knee, Ground",
         "timeline_name": "Shot Levels"
       },
+      "shot_scale_and_movement": {
+        "plugin_name": "Shot Scale and Movement Classification",
+        "plugin_description": "This plugin classifies scale/size and movement of each shot within the video based on a deep learning model. All shots will be automatically labeled by its dominant shot scale/size and movement. Possible scale labels: Extreme Close-Up, Close-Up, Medium, Full, Long; Possible movement labels: Static, Motion, Push, Pull",
+        "timeline_name_scale": "Shot Scales",
+        "timeline_name_movement": "Shot Movements"
+      },
       "invert": {
         "plugin_name": "Invert Timeline",
         "plugin_description": "Inverts a timeline by calculating 1-y. If the original timeline was greater than 1 or less than 0, the values are normalized to [0,1] beforehand.",
