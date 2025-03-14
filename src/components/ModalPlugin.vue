@@ -377,6 +377,38 @@ export default {
                 },
               ],
             },
+            {
+              name: this.$t("modal.plugin.active_speaker_detection.plugin_name"),
+              description: this.$t("modal.plugin.active_speaker_detection.plugin_description"),
+              icon: "mdi-waveform",
+              plugin: "active_speaker_detection",
+              id: 204,
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.active_speaker_detection.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+                {
+                  field: "select_timeline",
+                  name: "shot_timeline_id",
+                  text: this.$t("modal.plugin.shot_timeline_name"),
+                  hint: this.$t("modal.plugin.shot_timeline_hint"),
+                },
+              ],
+              optional_parameters: [
+                {
+                  field: "slider",
+                  min: 1,
+                  max: 30,
+                  value: 25,
+                  step: 1,
+                  name: "fps",
+                  text: this.$t("modal.plugin.fps"),
+                },
+              ],
+            },
             // {
             //   name: this.$t("modal.plugin.facesize.plugin_name"),
             //   icon: "mdi-face-recognition",

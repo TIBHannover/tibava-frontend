@@ -178,6 +178,11 @@
         "plugin_name": "Audio Speaker Analysis",
         "plugin_description": "This plugin detects emotions and gender from audio segments (retrieved with WisperX)."
       },
+      "active_speaker_detection": {
+        "plugin_name": "Active Speaker Detection",
+        "plugin_description": "This plugin does active speaker detection based on audio and tracked face data.",
+        "timeline_name": "Active Speaker Detection"
+      },
       "audio_classification": {
         "plugin_name": "Audio Classification",
         "plugin_description": "This plugin classifies sounds from video segments.",

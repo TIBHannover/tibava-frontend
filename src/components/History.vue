@@ -109,6 +109,9 @@ export default {
       if (type === "audio_speaker_analysis") {
         return this.$t("modal.plugin.audio_speaker_analysis.plugin_name")
       }
+      if (type === "active_speaker_detection") {
+        return this.$t("modal.plugin.active_speaker_detection.plugin_name")
+      }
       if (type === "audio_classification") {
         return this.$t("modal.plugin.audio_classification.plugin_name")
       }
