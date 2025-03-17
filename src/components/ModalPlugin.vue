@@ -175,7 +175,14 @@ export default {
               icon: "mdi-waveform",
               plugin: "whisper",
               id: 104,
-              parameters: [],
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.whisper.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
               optional_parameters: [],
             },
             {
@@ -184,7 +191,14 @@ export default {
               icon: "mdi-waveform",
               plugin: "whisper_x",
               id: 105,
-              parameters: [],
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.whisper_x.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
               optional_parameters: [
                 {
                   field: "text_field",
@@ -231,8 +245,14 @@ export default {
               description: this.$t("modal.plugin.audio_classification.plugin_description"),
               icon: "mdi-waveform",
               plugin: "audio_classification",
-              id: 107,
+              id: 108,
               parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.audio_classification.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
                 {
                   field: "select_options",
                   text: this.$t("modal.plugin.audio_classification.segmentation_selector_description"),
@@ -1120,7 +1140,14 @@ export default {
               icon: "mdi-translate",
               plugin: "text_ner",
               id: 701,
-              parameters: [],
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.text_ner.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
               optional_parameters: []
             },
             {
@@ -1130,6 +1157,12 @@ export default {
               plugin: "text_pos",
               id: 702,
               parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.text_pos.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
                 {
                   field: "text_field",
                   name: "language_code",
@@ -1146,6 +1179,12 @@ export default {
               plugin: "text_sentiment",
               id: 703,
               parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.text_sentiment.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
                 {
                   field: "select_options",
                   text: this.$t("modal.plugin.text_sentiment.model_selector_description"),
