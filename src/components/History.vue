@@ -106,8 +106,11 @@ export default {
       if (type === "audio_rms") {
         return this.$t("modal.plugin.audio_rms.plugin_name");
       }
-      if (type === "audio_speaker_analysis") {
-        return this.$t("modal.plugin.audio_speaker_analysis.plugin_name")
+      if (type === "audio_emotion") {
+        return this.$t("modal.plugin.audio_emotion.plugin_name")
+      }
+      if (type === "audio_gender") {
+        return this.$t("modal.plugin.audio_gender.plugin_name")
       }
       if (type === "active_speaker_detection") {
         return this.$t("modal.plugin.active_speaker_detection.plugin_name")

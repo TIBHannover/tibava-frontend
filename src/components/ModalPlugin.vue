@@ -195,12 +195,35 @@ export default {
               ],
             },
             {
-              name: this.$t("modal.plugin.audio_speaker_analysis.plugin_name"),
-              description: this.$t("modal.plugin.audio_speaker_analysis.plugin_description"),
+              name: this.$t("modal.plugin.audio_emotion.plugin_name"),
+              description: this.$t("modal.plugin.audio_emotion.plugin_description"),
               icon: "mdi-waveform",
-              plugin: "audio_speaker_analysis",
+              plugin: "audio_emotion",
               id: 106,
-              parameters: [],
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.audio_emotion.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
+              optional_parameters: [],
+            },
+            {
+              name: this.$t("modal.plugin.audio_gender.plugin_name"),
+              description: this.$t("modal.plugin.audio_gender.plugin_description"),
+              icon: "mdi-waveform",
+              plugin: "audio_gender",
+              id: 107,
+              parameters: [
+                {
+                  field: "text_field",
+                  name: "timeline",
+                  value: this.$t("modal.plugin.audio_gender.timeline_name"),
+                  text: this.$t("modal.plugin.timeline_name"),
+                },
+              ],
               optional_parameters: [],
             },
             {

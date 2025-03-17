@@ -174,9 +174,15 @@
         "language_code_name": "Language Code",
         "language_code_hint": "If not provided, the spoken language is detected automatically"
       },
-      "audio_speaker_analysis": {
-        "plugin_name": "Audio Speaker Analysis",
-        "plugin_description": "This plugin detects emotions and gender from audio segments (retrieved with WisperX)."
+      "audio_emotion": {
+        "plugin_name": "Audio Emotion Classification",
+        "timeline_name": "Audio Emotion Classification",
+        "plugin_description": "This plugin detects emotions from audio segments (retrieved with WisperX)."
+      },
+      "audio_gender": {
+        "plugin_name": "Audio Gender Classification",
+        "timeline_name": "Audio Gender Classification",
+        "plugin_description": "This plugin detects the gender from audio/speech segments (retrieved with WisperX)."
       },
       "active_speaker_detection": {
         "plugin_name": "Active Speaker Detection",
